@@ -1,6 +1,8 @@
 # JellyGallery
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.9.
+The plan is to create a small online gallery to categorize and show jelly shoes like Melissa, Petit Jolie, Lemon Jelly, among others. After the main gallery is done, I also want to do some kind of CRUD to add new products to the gallery.
+I'm using this primordially for learning Angular and improving my frontend skills, as well as learning some backend development. Let's see how it goes. A further step would be allowing other interested people to help expand this gallery. 
 
 ## Development server
 
