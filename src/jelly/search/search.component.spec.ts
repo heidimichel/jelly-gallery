@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SearchComponent } from './search.component';
+import { JellySearchComponent } from './search.component';
 
-describe('SearchComponent', () => {
-  let component: SearchComponent;
-  let fixture: ComponentFixture<SearchComponent>;
+describe('JellySearchComponent', () => {
+  let component: JellySearchComponent;
+  let fixture: ComponentFixture<JellySearchComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SearchComponent]
+      imports: [JellySearchComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(SearchComponent);
+    fixture = TestBed.createComponent(JellySearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
