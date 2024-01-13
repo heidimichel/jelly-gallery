@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   templateUrl: './jelly-footer.component.html',
 })
 export class JellyFooterComponent {
-
+  currentYear = new Date().getFullYear();
 }
