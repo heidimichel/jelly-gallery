@@ -1,10 +1,14 @@
 @import "bootstrap/dist/css/bootstrap.css";
-
+//add other imports here
 .jelly-top-menu {
-  background-color: white;
+  //temporary styles while bootstrap is not fully working
   border-bottom: 1px solid #ccc;
   width: 100%;
-  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 1em;
+  text-align: center;
 }
 .jelly-main {
   width: 100%;
