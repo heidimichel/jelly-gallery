@@ -19,15 +19,3 @@ import { JellyFlavoursComponent } from './flavours/flavours.component';
 export class JellyComponent {
   title = 'jelly-gallery';
 }
-
-export const routes: Routes = [
-  { path: 'home', component: JellyHomeComponent },
-  { path: 'about', component: JellyAboutComponent },
-  { path: 'flavours', component: JellyFlavoursComponent },
-  {
-      path: 'search',
-      component: JellySearchComponent,
-  },
-  { path: 'login', component: JellyLoginComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-]
