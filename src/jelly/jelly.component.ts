@@ -14,7 +14,7 @@ import { JellyFlavoursComponent } from './flavours/flavours.component';
     standalone: true,
     templateUrl: './jelly.component.html',
     styleUrl: './jelly.component.scss',
-    imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, JellyTopMenuComponent, JellyFooterComponent, JellySearchComponent, JellyAboutComponent, JellyHomeComponent, JellyLoginComponent]
+    imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, JellyTopMenuComponent, JellyFooterComponent, JellySearchComponent, JellyAboutComponent, JellyHomeComponent, JellyLoginComponent, JellyFlavoursComponent]
 })
 export class JellyComponent {
   title = 'jelly-gallery';
