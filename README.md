@@ -4,6 +4,22 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 The plan is to create a small online gallery to categorize and show jelly shoes like Melissa, Petit Jolie, Lemon Jelly, among others. After the main gallery is done, I also want to do some kind of CRUD to add new products to the gallery.
 I'm using this primordially for learning Angular and improving my frontend skills, as well as learning some backend development. Let's see how it goes. A further step would be allowing other interested people to help expand this gallery. 
 
+# Schematics
+
+- main component (jelly)
+    - top-menu
+    - content (where everything will load)
+        - home page
+        - about page
+        - login page
+        - flavours page
+        - search page
+            - side menu
+            - search results
+                - result (a miniature)
+                (clicking on the search result leads to the product page)
+    - footer
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
