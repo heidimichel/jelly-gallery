@@ -1,7 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive, RouterOutlet, Routes } from '@angular/router';
-import { JellyTopMenuComponent } from "./top-menu/jelly-top-menu.component";
 import { JellyFooterComponent } from "./footer/jelly-footer.component";
 import { JellySearchComponent } from './search/search.component';
 import { JellyAboutComponent } from './about/about.component';
@@ -14,7 +13,7 @@ import { JellyFlavoursComponent } from './flavours/flavours.component';
     standalone: true,
     templateUrl: './jelly.component.html',
     styleUrl: './jelly.component.scss',
-    imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, JellyTopMenuComponent, JellyFooterComponent, JellySearchComponent, JellyAboutComponent, JellyHomeComponent, JellyLoginComponent, JellyFlavoursComponent]
+    imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, JellyFooterComponent, JellySearchComponent, JellyAboutComponent, JellyHomeComponent, JellyLoginComponent, JellyFlavoursComponent]
 })
 export class JellyComponent {
   title = 'jelly-gallery';
