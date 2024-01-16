@@ -12,6 +12,10 @@ $cherry: #a50703;
 $strawberry: #ff5ec5;
 $peach: #ffc1cc;
 
+.icon-base {
+  opacity:0.8;
+  fill:#4F4F4F;
+}
 
 .jelly-top-menu {
   //temporary styles while bootstrap is not fully working
@@ -22,11 +26,6 @@ $peach: #ffc1cc;
   justify-content: space-around;
   padding: 1em;
   text-align: center;
-}
-.jelly-main {
-  width: 100%;
-  height: 800px;
-  display: flex;
 }
 jelly-search {
   display: flex;
@@ -102,6 +101,6 @@ jelly-flavours {
   padding: 1em;
   text-align: center;
 }
-.uni {
+.uni { /*utility class to quickly add a bg to an item*/
   background-color: pink;
 }
