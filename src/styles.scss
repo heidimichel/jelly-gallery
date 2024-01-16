@@ -1,5 +1,18 @@
 @import "bootstrap/dist/css/bootstrap.css";
 //add other imports here
+
+/*Color Variants*/
+$grape: #8a2be2; //maybe #bf94e4?
+$blueberry: #103486;
+$sky: #8cddfe;
+$kiwi: #769b47;
+$ananas: #fff45e;
+$orange: #ff8700;
+$cherry: #a50703;
+$strawberry: #ff5ec5;
+$peach: #ffc1cc;
+
+
 .jelly-top-menu {
   //temporary styles while bootstrap is not fully working
   border-bottom: 1px solid #ccc;
@@ -37,9 +50,58 @@ jelly-search {
   width: 200px;
   height: 200px;
 }
+jelly-flavours {
+  margin: auto;
+  max-width: 600px;
+  text-align: center;
+  //add hover+focus states, and extend bootstrap classes
+  .btn-grape {
+    background-color: $grape;
+    color: white;
+    width: 100%;
+  }
+  .btn-blueberry {
+    background-color: $blueberry;
+    color: white;
+    width: 100%;
+  }
+  .btn-sky {
+    background-color: $sky;
+    width: 100%;
+  }
+  .btn-kiwi {
+    background-color: $kiwi;
+    color: white;
+    width: 100%;
+  }
+  .btn-ananas {
+    background-color: $ananas;
+    width: 100%;
+  }
+  .btn-orange {
+    background-color: $orange;
+    width: 100%;
+  }
+  .btn-cherry {
+    background-color: $cherry;
+    color: white;
+    width: 100%;
+  }
+  .btn-strawberry {
+    background-color: $strawberry;
+    width: 100%;
+  }
+  .btn-peach {
+    background-color: $peach;
+    width: 100%;
+  }
+}
 .jelly-footer {
   background-color: #ccc;
   width: 100%;
   padding: 1em;
   text-align: center;
+}
+.uni {
+  background-color: pink;
 }
