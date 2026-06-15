@@ -1,0 +1,70 @@
+{
+  "id": "000001",
+  "name": "Lady Dragon II",
+  "brand": "Melissa",
+  "year": 2023,
+  "colors": [
+    "black",
+    "white",
+    "pink",
+    "yellow"
+  ],
+  "features": [
+    "pumps",
+    "high heel",
+    "peep toe",
+    "Vivienne Westwood"
+  ],
+  "type": "shoe"
+},
+{
+  "id": "000002",
+  "name": "Rocking Horse Ballerina",
+  "brand": "Melissa",
+  "year": 2023,
+  "colors": [
+    "black",
+    "white",
+    "red",
+    "gray"
+  ],
+  "features": [
+    "ribbons",
+    "platform",
+    "pumps",
+    "Vivienne Westwood"
+  ],
+  "type": "shoe"
+},
+{
+  "id": "000003",
+  "name": "Ultragirl",
+  "brand": "Melissa",
+  "year": 2023,
+  "colors": [
+    "black",
+    "white",
+    "red",
+    "yellow"
+  ],
+  "features": [
+    "flats",
+  ],
+  "type": "shoe"
+},
+{
+  "id": "000004",
+  "name": "Ultragirl Bag",
+  "brand": "Melissa",
+  "year": 2023,
+  "colors": [
+    "black",
+    "white",
+    "red",
+    "yellow"
+  ],
+  "features": [
+    "strap",
+  ],
+  "type": "bag"
+}
