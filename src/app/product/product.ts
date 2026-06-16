@@ -1,9 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
+import { map, switchMap } from 'rxjs';
+import { ProductService } from './product.service';
+import { Product } from './product.model';
 
 @Component({
   selector: 'jelly-product',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './product.html',
   styleUrl: './product.scss',
 })
-export class Product {}
+export class JellyProductComponent implements OnInit {
+  private readonly productService = inject(ProductService);
+  private readonly route = inject(ActivatedRoute);
+  product?: Product;
+
+  ngOnInit() {
+    this.route.paramMap
+      .pipe(
+        map((params) => params.get('id') ?? '000001'),
+        switchMap((id) => this.productService.getProductById(id))
+      )
+      .subscribe((product) => {
+        this.product = product;
+      });
+  }
+}

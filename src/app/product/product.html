@@ -1,4 +1,26 @@
-<div class="container text-center py-5">
-    <div style="background-color: greenyellow; width: 100%; padding: 1em;">PRODUCT PAGE</div>
-    <p>image to the left and infos here on the right!</p>
+<div class="container py-5">
+    @if (product) {
+    <div class="row">
+        <div class="col-md-6">
+            <img src="assets/data/fakeshoe_vixen.jpg" [alt]="product.name + ' (' + product.type + ')'"
+                style="width:400px" />
+        </div>
+        <div class="col-md-6">
+            <h2>{{ product.name }}</h2>
+            <p>{{ product.description }}</p>
+            <p><b>Brand:</b> {{ product.brand }}</p>
+            <p><b>Year:</b> {{ product.year }}</p>
+            <p><b>Type:</b> {{ product.type }}</p>
+            <p><b>Colors:</b> {{ product.colors.join(', ') }}</p>
+            <p><b>Features:</b></p>
+            <ul>
+                @for (feature of product.features; track $index) {
+                    <li>{{ feature }}</li>
+                }
+            </ul>
+        </div>
+    </div>
+    } @else {
+    <p>Loading product…</p>
+    }
 </div>

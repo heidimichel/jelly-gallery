@@ -5,6 +5,7 @@ import {JellyFlavoursComponent }from './flavours/flavours';
 import { JellySearchComponent } from './search/search';
 import { JellyLoginComponent } from './login/login';
 import { JellyNotFoundComponent } from './not-found/not-found';
+import { JellyProductComponent } from './product/product';
 
 export const routes: Routes = [
     { path: 'home', component: JellyHomeComponent },
@@ -23,6 +24,10 @@ export const routes: Routes = [
               component: ChildBComponent,
             },
           ],*/
+    },
+    {
+        path: 'product/:id',
+        component: JellyProductComponent,
     },
     { path: 'login', component: JellyLoginComponent },
     { path: '', redirectTo: '/home', pathMatch: 'full' },
