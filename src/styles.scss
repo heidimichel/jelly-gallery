@@ -34,6 +34,9 @@ jelly-search {
     height: 100%;
     padding: 1em;
     height: calc(100vh - 100px); /*rough calculation for menu and footer*/
+    ul li {
+      list-style: none;
+    }
   }
   .jelly-content {
       flex-grow: 1;

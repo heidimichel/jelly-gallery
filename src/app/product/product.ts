@@ -20,11 +20,12 @@ export class JellyProductComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap
       .pipe(
-        map((params) => params.get('id') ?? '000001'),
+        map((params) => params.get('id') ?? '000001'), //todo: remove this as soon as I have a working backend
         switchMap((id) => this.productService.getProductById(id))
       )
       .subscribe((product) => {
         this.product = product;
+        console.log('Product:', product);
       });
   }
 }

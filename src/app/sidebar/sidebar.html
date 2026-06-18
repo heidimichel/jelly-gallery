@@ -1,13 +1,44 @@
 <div class="jelly-sidebar">
-    <nav>
-      <p>This is where the filters are.</p>
-      <p>Search bar here</p>
-      <ul>
-        <li>Dropdown (?): Color</li>
-        <li>Dropdown (?): Year</li>
-        <li>Dropdown (?): Heel height</li>
-        <li>Dropdown (?): Category</li>
-        <li>Dropdown (?): Brand</li>
-      </ul>
-    </nav>
-  </div>
+  <form>
+    <p>Filter your results</p>
+      <p>
+        <input type="text" placeholder="Search..." />
+      </p>
+      <p>
+        <select name="colors" id="colors">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </select>
+      </p>
+      <p>
+        <input type="number" placeholder="Year" /> <!--TODO: check what other types of inputs would be good, example, range-->
+      </p>
+      <p>
+        <select name="category" id="category">
+          <option value="shoe">Shoes</option>
+          <option value="bag">Bags</option>
+          <option value="accessory">Accessories</option>
+        </select>
+      </p>
+      <p>
+        <select name="heelHeight" id="heelHeight">
+          <option value="flat">Flat</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+      </p>
+      <p>
+        <select name="brand" id="brand">
+          <option value="melissa">Melissa</option>
+          <option value="petitJolie">Petit Jolie</option>
+          <option value="lemonJelly">Lemon Jelly</option>
+        </select>
+      </p>
+      <p>
+        <button type="submit">Search</button> <!--TODO: make it full width--> <!--TODO: make it work-->
+      </p>
+  </form>
+</div>

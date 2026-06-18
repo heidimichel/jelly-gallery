@@ -5,7 +5,7 @@ import { Product } from './product.model';
 
 @Injectable({ providedIn: 'root' })
 export class ProductService {
-  private readonly url = 'assets/data/fakeshoes.json';
+  private readonly url = '/assets/data/fakeshoes.json';  //todo: remove this as soon as I have a working backend
 
   constructor(private http: HttpClient) {}
 
