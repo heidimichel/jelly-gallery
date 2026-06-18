@@ -27,11 +27,13 @@ $peach: #ffc1cc;
 jelly-search {
   display: flex;
   width: 100vw;
-  .jelly-side-menu {
-    background-color: $grape;
+  .jelly-sidebar {
+    background-color: $grape; /*use variable from currently active color theme. Currently standard theme: grape*/
     color: white;
     width: 290px;
     height: 100%;
+    padding: 1em;
+    height: calc(100vh - 100px); /*rough calculation for menu and footer*/
   }
   .jelly-content {
       flex-grow: 1;
