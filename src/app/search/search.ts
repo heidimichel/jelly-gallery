@@ -16,7 +16,7 @@ export class JellySearchComponent implements OnInit {
   ngOnInit() {
     if (this.searchResults.length === 0) { //TODO: temporary method to show 4 products for now. later, show a message like "use the left menu to search."
       this.productService.getProducts().subscribe(products => {
-        this.searchResults = products.slice(0, 4);
+        this.searchResults = products.slice(0, 7);
       });
     }
   }

@@ -48,5 +48,45 @@
     "colors": ["black", "white", "pink", "yellow"],
     "features": ["pumps", "high heel", "peep toe", "Vivienne Westwood"],
     "type": "shoe"
+  },
+  {
+    "id": "000006",
+    "name": "Flower Sandal",
+    "brand": "Koi Footwear",
+    "year": 2023,
+    "description": "ffffffffffffffff",
+    "colors": ["black", "white", "red", "gray"],
+    "features": ["sandals", "platform", "flowers"],
+    "type": "shoe"
+  },
+  {
+    "id": "000007",
+    "name": "Rainy Boots",
+    "brand": "Lemon Jelly",
+    "year": 2023,
+    "description": "gggggggggggggggggg",
+    "colors": ["black", "white", "pink"],
+    "features": ["boots"],
+    "type": "shoe"
+  },
+  {
+    "id": "000008",
+    "name": "Square Bag",
+    "brand": "Petite Jolie",
+    "year": 2023,
+    "description": "hhhhhhhhhhhhhh",
+    "colors": ["black", "white", "red", "yellow"],
+    "features": ["strap"],
+    "type": "bag"
+  },
+  {
+    "id": "000009",
+    "name": "Example Product",
+    "brand": "Lemon Jelly",
+    "year": 2023,
+    "description": "iiiiiiiiiiiiii",
+    "colors": ["black", "white", "pink", "red"],
+    "features": ["flower"],
+    "type": "accessory"
   }
 ]

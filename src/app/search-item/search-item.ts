@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Product } from '../product/product.model';
 
 @Component({
   selector: 'jelly-search-item',
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './search-item.html',
   styleUrl: './search-item.scss',
 })
-export class SearchItem {}
+export class SearchItem {
+  @Input() product!: Product;
+}

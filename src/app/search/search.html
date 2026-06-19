@@ -1,10 +1,12 @@
 <jelly-sidebar></jelly-sidebar>
 <div class="jelly-content">
-   SEARCH RESULTS HERE. This is where the results will load. 
-   
-   <!--for now, show 4 latest products.-->
-   @for (result of searchResults; track result.id) {
-      <p>{{ result.name }}</p>
-      <jelly-search-item></jelly-search-item><!--todo: pass values here-->
-   }
+   <p>Use the left menu to search. No results for now.</p>
+   <!--for now, show some products.-->
+   <div class="row">
+      @for (result of searchResults; track result.id) {
+         <div class="col-3">
+            <jelly-search-item [product]="result"></jelly-search-item>
+         </div>
+      }
+   </div>
 </div> 
