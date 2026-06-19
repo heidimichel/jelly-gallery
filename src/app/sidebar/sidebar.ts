@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Brand, Colors, HeelHeight, ProductType } from '../product/product.model';
 
 @Component({
   selector: 'jelly-sidebar',
@@ -6,4 +7,9 @@ import { Component } from '@angular/core';
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.scss',
 })
-export class Sidebar {}
+export class Sidebar {
+  colorOptions!: Colors[];
+  productTypes!: ProductType[];
+  brands!: Brand[];
+  heelHeights!: HeelHeight[];
+}

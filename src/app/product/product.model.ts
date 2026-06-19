@@ -25,6 +25,14 @@ export enum ProductType {
   Accessory = 'accessory',
 }
 
+export enum HeelHeight {
+  Flat = 'flat',
+  Low = 'low',
+  Medium = 'medium',
+  High = 'high',
+  Platform = 'platform',
+}
+
 //TODO: add possible features to identify a shoe with, ex, heels or flats, closed toe (pumps) or open toe (sandals), etc. They could also be bag or accessories features.
 
 export interface Product {

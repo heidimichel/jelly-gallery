@@ -28,14 +28,16 @@ jelly-search {
   display: flex;
   width: 100vw;
   .jelly-sidebar {
-    background-color: $grape; /*use variable from currently active color theme. Currently standard theme: grape*/
+    background-color: #d0aaf3; /*use a lightened version from currently active color theme. Currently standard theme: grape*/
     color: white;
     width: 290px;
     height: 100%;
     padding: 1em;
-    height: calc(100vh - 100px); /*rough calculation for menu and footer*/
-    ul li {
-      list-style: none;
+    height: calc(100vh - 100px); /*rough calculation for menu and footer. It would be better to have a flexible approach, though!*/
+    select, input, button {
+      width: 100%;
+      border: 1px solid $grape;
+      padding: 5px;
     }
   }
   .jelly-content {
@@ -103,7 +105,4 @@ jelly-flavours {
   width: 100%;
   padding: 1em;
   text-align: center;
-}
-.uni { /*utility class to quickly add a bg to an item*/
-  background-color: pink;
 }
