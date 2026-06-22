@@ -1,3 +1,12 @@
 #icon-boot, #icon-bag, #icon-flat, #icon-sandal, #icon-pump {
     width: 200px;
 }
+#splash-image {
+    min-width: 400px;
+}
+.splash-text {
+    fill: #6d6e71;
+}
+.main-column {
+    height: calc(100vh - 100px);
+}
