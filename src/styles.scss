@@ -1,13 +1,71 @@
-/*Color Variants*/
-$grape: #8a2be2;
-$blueberry: #103486;
-$sky: #8cddfe;
-$kiwi: #769b47;
-$ananas: #fff45e;
-$orange: #ff8700;
-$cherry: #a50703;
-$strawberry: #ff5ec5;
-$peach: #ffc1cc;
+/*Color themes*/
+:root {
+  --color-main: #8a2be2;
+  --color-dark: #521987;
+  --color-light: #d0aaf3;
+  .logo-lighter {
+    fill: var(--color-main);//var(--color-light); /*TODO: decide between color and highlight*/
+  }
+  .logo-darker {
+    fill: var(--color-dark);//var(--color-main);
+  }
+}
+
+.grape {
+  --color-main: #8a2be2;
+  --color-dark: #521987;
+  --color-light: #d0aaf3;
+}
+
+.blueberry {
+  --color-main: #103486;
+  --color-dark: #081a43;
+  --color-light: #9fadce;
+}
+
+.sky {
+  --color-main: #8cddfe;
+  --color-dark: #466e7f;
+  --color-light: #e8f8fe;
+}
+
+.kiwi {
+  --color-main: #769b47;
+  --color-dark: #3b4d23;
+  --color-light: #d5e1c7;
+}
+
+.ananas {
+  --color-main: #fff45e;
+  --color-dark: #b2aa41;
+  --color-light: #fffbce;
+}
+
+.orange {
+  --color-main: #ff8700;
+  --color-dark: #b25e00;
+  --color-light: #ffcf99;
+}
+
+.cherry {
+  --color-main: #a50703;
+  --color-dark: #730402;
+  --color-light: #db9b9a;
+}
+
+.strawberry {
+  --color-main: #ff5ec5;
+  --color-dark: #b24189;
+  --color-light: #ffbee7;
+}
+
+.peach { 
+  --color-main: #ffc1cc;
+  --color-dark: #cc9aa3;
+  --color-light: #ffe6ea;
+}
+
+/*actual styles*/
 
 .icon-base {
   opacity:0.8;
@@ -15,7 +73,6 @@ $peach: #ffc1cc;
 }
 
 .jelly-top-menu {
-  //temporary styles while bootstrap is not fully working
   border-bottom: 1px solid #ccc;
   width: 100%;
   display: flex;
@@ -23,86 +80,38 @@ $peach: #ffc1cc;
   justify-content: space-around;
   padding: 1em;
   text-align: center;
+  a {
+    color: var(--color-main);
+    text-decoration: none;
+    &:hover {
+      color: var(--color-dark);
+    }
+  }
 }
+
 jelly-search {
   display: flex;
   width: 100vw;
-  .jelly-sidebar {
-    background-color: #d0aaf3; /*use a lightened version from currently active color theme. Currently standard theme: grape*/
-    color: white;
-    width: 290px;
-    height: 100%;
-    padding: 1em;
-    height: calc(100vh - 100px); /*rough calculation for menu and footer. It would be better to have a flexible approach, though!*/
-    select, input, button {
-      width: 100%;
-      border: 1px solid $grape;
-      padding: 5px;
-    }
-  }
-  .jelly-content {
-      flex-grow: 1;
-      height: 100%;
-      margin-left: 1em;
-  }
 }
-.jelly-search-results {
-  background-color: green;
-}
-.jelly-search-result {
-  background-color: yellow;
-  width: 200px;
-  height: 200px;
-}
-jelly-flavours {
-  margin: auto;
-  max-width: 600px;
-  text-align: center;
-  //add hover+focus states, and extend bootstrap classes
-  .btn-grape {
-    background-color: $grape;
-    color: white;
-    width: 100%;
-  }
-  .btn-blueberry {
-    background-color: $blueberry;
-    color: white;
-    width: 100%;
-  }
-  .btn-sky {
-    background-color: $sky;
-    width: 100%;
-  }
-  .btn-kiwi {
-    background-color: $kiwi;
-    color: white;
-    width: 100%;
-  }
-  .btn-ananas {
-    background-color: $ananas;
-    width: 100%;
-  }
-  .btn-orange {
-    background-color: $orange;
-    width: 100%;
-  }
-  .btn-cherry {
-    background-color: $cherry;
-    color: white;
-    width: 100%;
-  }
-  .btn-strawberry {
-    background-color: $strawberry;
-    width: 100%;
-  }
-  .btn-peach {
-    background-color: $peach;
-    width: 100%;
-  }
-}
-.jelly-footer {
-  background-color: #ccc;
-  width: 100%;
+
+.jelly-sidebar {
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  width: 290px;
+  height: 100%;
   padding: 1em;
-  text-align: center;
+  height: calc(100vh - 100px);  /*rough calculation for menu and footer. It would be better to have a flexible approach, though!*/
+  select,
+  input,
+  button {
+    width: 100%;
+    border: 1px solid var(--color-dark);
+    padding: 5px;
+  }
+}
+
+.jelly-content { //check if this is the correct name, or if it should be used in other places as well
+  flex-grow: 1;
+  height: 100%;
+  margin-left: 1em;
 }
