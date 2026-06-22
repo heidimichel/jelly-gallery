@@ -4,10 +4,10 @@
   --color-dark: #521987;
   --color-light: #d0aaf3;
   .logo-lighter {
-    fill: var(--color-main);//var(--color-light); /*TODO: decide between color and highlight*/
+    fill: var(--color-main);
   }
   .logo-darker {
-    fill: var(--color-dark);//var(--color-main);
+    fill: var(--color-dark);
   }
 }
 
@@ -69,7 +69,7 @@
 
 .icon-base {
   opacity:0.8;
-  fill:#4F4F4F;
+  fill: var(--color-dark);
 }
 
 .jelly-top-menu {
