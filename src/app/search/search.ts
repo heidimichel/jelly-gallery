@@ -14,7 +14,7 @@ export class JellySearchComponent implements OnInit {
   private productService = inject(ProductService);
   searchResults: Product[] = [];
   ngOnInit() {
-    if (this.searchResults.length === 0) { //TODO: temporary method to show 4 products for now. later, show a message like "use the left menu to search."
+    if (this.searchResults.length === 0) { //TODO: temporary method to show some products for now. later, show last added products as default, a list of 7-12 of them.
       this.productService.getProducts().subscribe(products => {
         this.searchResults = products.slice(0, 7);
       });

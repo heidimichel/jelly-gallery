@@ -3,7 +3,7 @@ export enum Brand {
     PetiteJolie = 'Petite Jolie',
     LemonJelly = 'Lemon Jelly',
     KoiFootwear = 'Koi Footwear',
-    //todo: check other brands that regularly release jelly shoes. These are the biggest, but other designers (like Karl Lagerfeld) release tem too, add them later (not now)
+    //TODO: check other brands that regularly release jelly shoes. These are the biggest, but other designers (like Karl Lagerfeld) release tem too, add them later (not now)
 }
 
 export enum Colors {
@@ -18,7 +18,7 @@ export enum Colors {
     Peach = 'peach',
     Black = 'black',
     White = 'white',
-    //todo: check and add more colors common for the products in the gallery
+    //TODO: check and add more colors common for the products in the gallery
 }
 
 export enum ProductType {

@@ -1,8 +1,8 @@
 <div class="jelly-sidebar">
-  <form>
+  <form [formGroup]="searchForm" (ngSubmit)="search()">
     <p>Filter your results</p>
       <p>
-        <input type="text" placeholder="Search..." />
+        <input type="text" placeholder="Search..." formControlName="freeSearch" />
       </p>
       <p>
         <label for="colors">Colors:</label>
@@ -14,12 +14,12 @@
       </p>
       <p>
         <label for="year">Year:</label>
-        <input type="number" id="year" placeholder="Year" /> 
+        <input type="number" id="year" placeholder="Year" formControlName="year" /> 
         <!--TODO: check what other types of inputs would be good, for example, range?-->
       </p>
       <p>
         <label for="productType">Product Type:</label>
-        <select name="productType" id="productType">
+        <select name="productType" id="productType" formControlName="productType">
           @for (productType of productTypes; track $index) {
             <option [value]="productType">{{productType}}</option>
           }
@@ -27,7 +27,7 @@
       </p>
       <p>
         <label for="heelHeight">Heel Height:</label>
-        <select name="heelHeight" id="heelHeight">
+        <select name="heelHeight" id="heelHeight" formControlName="heelHeight">
           @for (heelHeight of heelHeights; track $index) {
             <option [value]="heelHeight">{{heelHeight}}</option>
           }
@@ -36,14 +36,14 @@
       </p>
       <p>
         <label for="brand">Brand:</label>
-        <select name="brand" id="brand">
+        <select name="brand" id="brand" formControlName="brand">
           @for (brand of brands; track $index) {
             <option [value]="brand">{{brand}}</option>
           }
         </select>
       </p>
       <p>
-        <button type="submit">Search</button><!--TODO: make it work-->
+        <button type="submit">Search</button>
       </p>
   </form>
 </div>
