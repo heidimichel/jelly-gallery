@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { map, switchMap } from 'rxjs';
+import { filter, map, switchMap } from 'rxjs';
 import { ProductService } from './product.service';
 import { Product } from './product.model';
 
@@ -13,19 +13,15 @@ import { Product } from './product.model';
   styleUrl: './product.scss',
 })
 export class JellyProductComponent implements OnInit {
-  private readonly productService = inject(ProductService);
-  private readonly route = inject(ActivatedRoute);
-  product?: Product;
+  private productService = inject(ProductService);
+  private route = inject(ActivatedRoute);
+  product$ = this.route.paramMap.pipe(
+    map(params => params.get('id')),
+    filter((id): id is string => id !== null),
+    switchMap(id => this.productService.getProductById(id))
+  );
 
   ngOnInit() {
-    this.route.paramMap
-      .pipe(
-        map((params) => params.get('id') ?? '000001'), //todo: remove this as soon as I have a working backend
-        switchMap((id) => this.productService.getProductById(id))
-      )
-      .subscribe((product) => {
-        this.product = product;
-        console.log('Product:', product);
-      });
+
   }
 }
