@@ -9,11 +9,13 @@ export enum Brand {
 export enum Colors {
     Purple = 'purple',
     Blue = 'blue',
+    Gray = "gray",
     Green = 'green',
     Yellow = 'yellow',
     Orange = 'orange',
     Red = 'red',
     Pink = 'pink',
+    Peach = 'peach',
     Black = 'black',
     White = 'white',
     //todo: check and add more colors common for the products in the gallery
@@ -44,4 +46,5 @@ export interface Product {
   colors: Colors[];
   features: string[];
   type: ProductType;
+  //pictures: []; //array of image addresses? how should that work?
 }
