@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { Product } from '../product/product.model';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'jelly-search-item',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './search-item.html',
   styleUrl: './search-item.scss',
 })

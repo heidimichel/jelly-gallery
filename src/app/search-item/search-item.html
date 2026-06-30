@@ -1,4 +1,4 @@
-<div class="text-center" style="width: 200px; height: 300px;">
-    <img src="assets/data/fakeshoe_vixen.jpg" style="width:200px" [alt]="product.name + ' (' + product.type + ')'" />
+<a [routerLink]="['/product', product.id]" class="search-item-card"><div class="text-center">
+    <img [src]="product.pictures[0]" style="width:200px" [alt]="product.name + ' (' + product.type + ')'" />
     <p>{{ product.name }}</p>
-</div>
+</div></a>

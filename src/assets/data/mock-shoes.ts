@@ -1,4 +1,4 @@
-import { Brand, Colors, Product, ProductType } from "../../app/product/product.model";
+import { Brand, Colors, HeelHeight, Product, ProductType } from "../../app/product/product.model";
 //adding items in a new mock file closer to the tour of heroes
 
 export const PRODUCTS: Product[] = [
@@ -10,7 +10,9 @@ export const PRODUCTS: Product[] = [
         description: "aaaaaaaaaaaaa",
         colors: [Colors.Peach, Colors.Black, Colors.Red],
         features: ["sandals", "high heel"],
-        type: ProductType.Shoe
+        heelhight: HeelHeight.Medium,
+        type: ProductType.Shoe,
+        pictures: ['assets/data/fakeshoe_vixen.jpg'],
     },
     {
         id: "00002",
@@ -19,8 +21,10 @@ export const PRODUCTS: Product[] = [
         year: 2016,
         description: "bbbbbbbbbbbb",
         colors: [Colors.Black, Colors.White, Colors.Red, Colors.Gray],
-        features: ["ribbons", "platform", "pumps", "Vivienne Westwood"],
-        type: ProductType.Shoe
+        features: ["ribbons", "pumps", "Vivienne Westwood"],
+        heelhight: HeelHeight.Platform,
+        type: ProductType.Shoe,
+        pictures: ['assets/data/fakeshoe_vixen.jpg'],
     },
     {
         id: "00003",
@@ -30,7 +34,9 @@ export const PRODUCTS: Product[] = [
         description: "ccccccccccccc",
         colors: [Colors.White, Colors.Black, Colors.Yellow],
         features: ["flats"],
-        type: ProductType.Shoe
+        heelhight: HeelHeight.Flat,
+        type: ProductType.Shoe,
+        pictures: ['assets/data/fakeshoe_vixen.jpg'],
     },
     {
         id: "00004",
@@ -40,7 +46,8 @@ export const PRODUCTS: Product[] = [
         description: "dddddddddddddd",
         colors: [Colors.Pink, Colors.Black, Colors.Red],
         features: ["strap"],
-        type: ProductType.Bag
+        type: ProductType.Bag,
+        pictures: ['assets/data/fakeshoe_vixen.jpg'],
     },
     {
         id: "00005",
@@ -50,17 +57,21 @@ export const PRODUCTS: Product[] = [
         description: "eeeeeeeeeeeeeee",
         colors: [Colors.Peach, Colors.Black, Colors.Red],
         features: ["sandals", "high heel"],
-        type: ProductType.Shoe
+        heelhight: HeelHeight.High,
+        type: ProductType.Shoe,
+        pictures: ['assets/data/fakeshoe_vixen.jpg'],
     },
     {
         id: "00006",
-        name: 'Flower Sandal',
+        name: 'Sunbeam Heart Jelly Sandals',
         brand: Brand.KoiFootwear,
         year: 2022,
-        description: "ffffffffffffffff",
-        colors: [Colors.Peach, Colors.Black, Colors.Red, Colors.Pink],
-        features: ["sandals", "platform", "flowers"],
-        type: ProductType.Shoe
+        description: "This one’s a throwback. Something you might remember wearing as a kid, only this time we’ve reworked it through a more grown up KOI lens. Same jelly nostalgia, but elevated with a chunkier base and finished with a matching metallic heart stud up top. For those who never really grew out of loving cute things, just evolved how they wear them. FITTING: Fit is on the smaller side, if you are in between sizes or have a wider foot, we recommend sizing up.",
+        colors: [Colors.Pink, Colors.Blue],
+        features: ["sandals", "heart"],
+        heelhight: HeelHeight.Low,
+        type: ProductType.Shoe,
+        pictures: ['assets/data/koifootwear_jelly_heart_sandals.png'],
     },
     {
         id: "00007",
@@ -70,7 +81,9 @@ export const PRODUCTS: Product[] = [
         description: "gggggggggggggggggg",
         colors: [Colors.White, Colors.Black, Colors.Pink],
         features: ["boots"],
-        type: ProductType.Shoe
+        heelhight: HeelHeight.Low,
+        type: ProductType.Shoe,
+        pictures: ['assets/data/fakeshoe_vixen.jpg'],
     },
     {
         id: "00008",
@@ -80,7 +93,8 @@ export const PRODUCTS: Product[] = [
         description: "hhhhhhhhhhhhhh",
         colors: [Colors.Peach, Colors.Yellow, Colors.Red],
         features: ["strap"],
-        type: ProductType.Bag
+        type: ProductType.Bag,
+        pictures: ['assets/data/fakeshoe_vixen.jpg'],
     },
     {
         id: "00009",
@@ -90,6 +104,7 @@ export const PRODUCTS: Product[] = [
         description: "iiiiiiiiiiiiii",
         colors: [Colors.Peach, Colors.Black, Colors.Red],
         features: ["flower"],
-        type: ProductType.Accessory
+        type: ProductType.Accessory,
+        pictures: ['assets/data/fakeshoe_vixen.jpg'],
     },
 ]

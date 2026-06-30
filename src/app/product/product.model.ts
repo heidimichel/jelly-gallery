@@ -45,6 +45,7 @@ export interface Product {
   description: string;
   colors: Colors[];
   features: string[];
+  heelhight?: HeelHeight;
   type: ProductType;
-  //pictures: []; //array of image addresses? how should that work?
+  pictures: string[];
 }
