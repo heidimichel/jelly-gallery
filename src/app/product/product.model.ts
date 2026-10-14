@@ -3,7 +3,11 @@ export enum Brand {
     PetiteJolie = 'Petite Jolie',
     LemonJelly = 'Lemon Jelly',
     KoiFootwear = 'Koi Footwear',
-    //TODO: check other brands that regularly release jelly shoes. These are the biggest, but other designers (like Karl Lagerfeld) release tem too, add them later (not now)
+    JimmyChoo = 'Jimmy Choo',
+    Chloe = 'Chloé',
+    HandM = 'H&M',
+    Zara = 'Zara',
+    AncientGreek = 'Ancient Greek Sandals',
 }
 
 export enum Colors {
@@ -16,9 +20,10 @@ export enum Colors {
     Red = 'red',
     Pink = 'pink',
     Peach = 'peach',
+    Beige = 'beige',
+    Brown = 'brown',
     Black = 'black',
     White = 'white',
-    //TODO: check and add more colors common for the products in the gallery
 }
 
 export enum ProductType {
@@ -35,7 +40,7 @@ export enum HeelHeight {
   Platform = 'platform',
 }
 
-//TODO: add possible features to identify a shoe with, ex, heels or flats, closed toe (pumps) or open toe (sandals), etc. They could also be bag or accessories features.
+//TODO: add possible features to identify a shoe with, ex, heels or flats, closed toe (pumps) or open toe (sandals), etc. They could also be bag or accessories features. For now they will appear in the DB as a plain string.
 
 export interface Product {
   id: string;
