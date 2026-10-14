@@ -1,27 +1,29 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { EMPTY, Observable, map, of } from 'rxjs';
+import { EMPTY, Observable, from, map, of } from 'rxjs';
 import { Product } from './product.model';
 import { PRODUCTS } from '../../assets/data/mock-shoes';
+import { SupabaseService } from '../core/supabase.service';
 
 @Injectable({ providedIn: 'root' })
 export class ProductService {
-  //path = '/assets/data/fakeshoes.json';  //todo: remove this as soon as I have a working backend
-  //path = `/api/products`; //path for the future, for now we don't have a real API
-  path = '/assets/data/mock-shoes.ts';
-  
-  constructor(private http: HttpClient,
-
-  ) {}
-
+  private supabase = inject(SupabaseService).client;
   getProducts(): Observable<Product[]> {
-    const products = of(PRODUCTS); //this particular way works best while I don't have a back end.
-    return products;
+    return from(this.supabase.from('products').select('*')).pipe(
+      map(response => {
+        if (response.error) throw response.error;
+        return response.data as Product[];
+      })
+    );
   }
-
-  getProductById(id: string): Observable<Product | undefined> {
-    return this.getProducts().pipe(
-      map((products) => products.find((product) => product.id === id))
+  getProductById(id: string): Observable<Product | null> {
+    return from(
+      this.supabase.from('products').select('*').eq('id', id).single()
+    ).pipe(
+      map(response => {
+        if (response.error) throw response.error;
+        return response.data as Product;
+      })
     );
   }
 }
