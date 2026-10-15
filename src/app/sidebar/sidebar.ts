@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Brand, Colors, HeelHeight, ProductType } from '../product/product.model';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { ProductFilters } from '../product/product.service';
 
 @Component({
   selector: 'jelly-sidebar',
@@ -14,17 +15,20 @@ export class Sidebar {
   brands: Brand[] = Object.values(Brand) as Brand[];
   heelHeights: HeelHeight[] = Object.values(HeelHeight) as HeelHeight[];
 
+  @Output() searchSubmitted = new EventEmitter<ProductFilters>();
+
   searchForm = new FormGroup({
-    freeSearch: new FormControl(''), //free text
+    name: new FormControl(''), //free text, use it to find the name.
     year: new FormControl(''), //limit typing to numbers? TODO: add validator
-    productType: new FormControl(''), //limit to existing types. TODO: create validator
-    heelHeight: new FormControl(''), //limit to existing types. TODO: create validator
-    brand: new FormControl(''), //limit to existing types. TODO: create validator
-    features: new FormControl(''), //not implemented in the template yet, should be a mix of dropdown and search
+    productType: new FormControl(''),
+    heelHeight: new FormControl(''),
+    brand: new FormControl(''),
+    colors: new FormControl(''),
+    //features: new FormControl(''), //not implemented in the template yet, should be a mix of dropdown and search...
   });
 
   search() {
-    //this will be the method that searches. TODO: actually make it work. The plan: use the search on the URL, and this method should emit an event or output so the Search can see it.
+    this.searchSubmitted.emit(this.searchForm.value as ProductFilters);
     console.log("congrats, you clicked! Your form contains: ", this.searchForm.value)
   }
 }

@@ -2,11 +2,12 @@
   <form [formGroup]="searchForm" (ngSubmit)="search()">
     <p>Filter your results</p>
       <p>
-        <input type="text" placeholder="Search..." formControlName="freeSearch" />
+        <input type="text" placeholder="Search..." formControlName="name" />
       </p>
       <p>
         <label for="colors">Colors:</label>
         <select name="colors" id="colors">
+          <option value="">Any color</option>
           @for (color of colorOptions; track $index) {
             <option [value]="color">{{color}}</option>  
           }

@@ -6,8 +6,6 @@ Current BE is in Supabase.
 
 TODO: buy a domain - either jelly-gallery.net or jelly-gallery.dev
 TODO: create an edit page
-TODO: connect Supabase for login functionalities
-TODO: delete images from the assets folder, use Supabase ones
 
 ## Development server
 
