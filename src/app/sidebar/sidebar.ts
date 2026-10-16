@@ -24,6 +24,7 @@ export class Sidebar {
     heelHeight: new FormControl(''),
     brand: new FormControl(''),
     colors: new FormControl(''),
+    //TODO: implement feature search. Important so the front page can be used as a shortcut to boots, bags, sandals and other type of search.
     //features: new FormControl(''), //not implemented in the template yet, should be a mix of dropdown and search...
   });
 
