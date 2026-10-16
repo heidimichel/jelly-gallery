@@ -1,4 +1,7 @@
-<a [routerLink]="['/product', product.id]" class="search-item-card"><div class="text-center">
-    <img [src]="product.pictures[0]" style="width:200px" [alt]="product.name + ' (' + product.type + ')'" />
-    <p>{{ product.name }}</p>
-</div></a>
+<a [routerLink]="['/product', product.id]" class="search-item-card">
+    <div class="d-flex flex-column align-items-center">
+        <img class="product-img" [src]="product.pictures[0]" [alt]="product.name + ' (' + product.type + ')'"
+            loading="lazy" />
+        <p>{{ product.name }}</p>
+    </div>
+</a>

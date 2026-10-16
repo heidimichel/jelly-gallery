@@ -1,11 +1,17 @@
 <jelly-sidebar (searchSubmitted)="onSearch($event)"></jelly-sidebar>
 <div class="jelly-content">
-   <p>Use the left menu to search.</p>
-   <div class="row">
+   @if (searchSubmitted == false) {
+      <p class="mt-3">{{initialText}}</p>
+   }
+   <p class="mt-3">{{initialText}}</p>
+   <div class="d-flex flex-wrap">
       @for (result of searchResults; track result.id) {
-         <div class="col-3">
+         <div class="col">
             <jelly-search-item [product]="result"></jelly-search-item>
          </div>
       }
    </div>
+   @if (searchSubmitted == true &&searchResults.length === 0) {
+      <p class="mt-3">No results found.</p>
+   }
 </div> 

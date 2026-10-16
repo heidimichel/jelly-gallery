@@ -2,8 +2,13 @@
     @if (product$ | async; as product) {
     <div class="row">
         <div class="col-md-6">
-            <img [src]="product.pictures[0]" [alt]="product.name + ' (' + product.type + ')'"
-                style="width:400px" />
+            <div class="featured-img">
+                <img [src]="product.pictures[0]" [alt]="product.name + ' (' + product.type + ')'" />
+            </div>
+            @for (picture of product.pictures; track $index) {
+            <img [src]="picture" [alt]="product.name + ' (' + product.type + ')'" class="thumbnail-img" />
+            <!--TODO: implement (click)="selectImage(picture)"-->
+            }
         </div>
         <div class="col-md-6">
             <h2>{{ product.name }}</h2>
@@ -15,7 +20,7 @@
             <p><b>Features:</b></p>
             <ul>
                 @for (feature of product.features; track $index) {
-                    <li>{{ feature }}</li>
+                <li>{{ feature }}</li>
                 }
             </ul>
         </div>

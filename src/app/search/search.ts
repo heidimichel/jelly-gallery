@@ -13,13 +13,13 @@ import { SearchItem } from "../search-item/search-item";
 export class JellySearchComponent implements OnInit {
   private productService = inject(ProductService);
   searchResults: Product[] = [];
+  initialText = "Use the left menu to search.";
+  searchSubmitted!: boolean;
   ngOnInit() {
-    // Initial load: show the first batch of products. TODO: check if this is the behavior I actually want, it looks kinda odd.
-    this.productService.getProducts().subscribe(products => {
-      this.searchResults = products.slice(0, 8);
-    });
+    //this.searchSubmitted = false;
   }
   onSearch(filters: ProductFilters) {
+    this.searchSubmitted = true;
     this.productService.searchProducts(filters).subscribe(products => {
       this.searchResults = products;
     });

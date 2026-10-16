@@ -3,24 +3,27 @@
   --color-main: #8a2be2;
   --color-dark: #521987;
   --color-light: #d0aaf3;
+
   .logo-lighter {
     fill: var(--color-main);
   }
+
   .logo-darker {
     fill: var(--color-dark);
   }
 }
 
+//TODO: review color schemes. Use mixins instead of these current colors, unless something is not readable / does not look good.
 .grape {
-  --color-main: #8a2be2;
-  --color-dark: #521987;
-  --color-light: #d0aaf3;
+  --color-main: rgb(138, 43, 226);
+  --color-dark: rgb(82, 25, 135);
+  --color-light: rgb(208, 170, 243);
 }
 
 .blueberry {
-  --color-main: #103486;
-  --color-dark: #081a43;
-  --color-light: #9fadce;
+  --color-main: rgb(16, 52, 134);
+  --color-dark: rgb(8, 26, 67);
+  --color-light: rgb(159, 173, 206);
 }
 
 .sky {
@@ -59,16 +62,24 @@
   --color-light: #ffbee7;
 }
 
-.peach { 
+.peach {
   --color-main: #ffc1cc;
   --color-dark: #cc9aa3;
   --color-light: #ffe6ea;
 }
 
+/* mixins */
+@mixin translucent-bg($color-var, $opacity: 10%) {
+  background-color: color-mix(in srgb, #{$color-var} #{$opacity}, transparent);
+}
+
 /*actual styles*/
+body {
+  @include translucent-bg(var(--color-dark), 10%);
+}
 
 .icon-base {
-  opacity:0.8;
+  opacity: 0.8;
   fill: var(--color-dark);
 }
 
@@ -80,9 +91,12 @@
   justify-content: space-around;
   padding: 1em;
   text-align: center;
+  background-color: #fff;
+
   a {
     color: var(--color-main);
     text-decoration: none;
+
     &:hover {
       color: var(--color-dark);
     }
@@ -98,9 +112,9 @@ jelly-search {
   background-color: var(--color-light);
   color: var(--color-dark);
   width: 290px;
-  height: 100%;
+  height: 400px;
   padding: 1em;
-  height: calc(100vh - 100px);  /*rough calculation for menu and footer. It would be better to have a flexible approach, though!*/
+
   select,
   input,
   button {
@@ -108,20 +122,54 @@ jelly-search {
     border: 1px solid var(--color-dark);
     padding: 5px;
   }
+
+  @media (min-width: 500px) {
+    height: calc(100vh - 100px); //TODO: make height dynamic based on top menu height, or use flexbox to fill remaining space. Or make same as the jelly-content height.
+  }
 }
 
-.jelly-content { //check if this is the correct name, or if it should be used in other places as well
+.jelly-content {
   flex-grow: 1;
   height: 100%;
   margin-left: 1em;
 }
 
 .search-item-card {
-  color: rgb(66, 66, 66);
+  color: var(--color-dark);
   div {
     padding: 1em;
+    margin: 0.5em;
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+    height: 300px;
+    .product-img {
+      width: 200px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      padding-bottom: 0.5em;
+    }
   }
-  & :hover {
-    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  &:hover {
+    div {
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px;
+    }
   }
+}
+
+/* Product page */
+.featured-img {
+  min-width: 300px;
+  img {
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+}
+.thumbnail-img {
+  width: 75px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  margin: 10px; //TODO: instead this, make a proper row of thumbnails with flexbox or grid
 }
