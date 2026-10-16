@@ -11,19 +11,23 @@ export enum Brand {
 }
 
 export enum Colors {
-    Purple = 'purple',
+    Beige = 'beige',
+    Black = 'black',
     Blue = 'blue',
+    Brown = 'brown',
+    Gold = 'gold',
     Gray = "gray",
     Green = 'green',
-    Yellow = 'yellow',
     Orange = 'orange',
-    Red = 'red',
-    Pink = 'pink',
     Peach = 'peach',
-    Beige = 'beige',
-    Brown = 'brown',
-    Black = 'black',
+    Pink = 'pink',
+    Purple = 'purple',
+    Red = 'red',
+    Silver = 'silver',
+    Transparent = 'transparent',
     White = 'white',
+    Wine = 'wine',
+    Yellow = 'yellow',
 }
 
 export enum ProductType {
@@ -40,7 +44,31 @@ export enum HeelHeight {
   Platform = 'platform',
 }
 
-//TODO: add possible features to identify a shoe with, ex, heels or flats, closed toe (pumps) or open toe (sandals), etc. They could also be bag or accessories features. For now they will appear in the DB as a plain string.
+export enum Features {
+  Sandals = 'sandals',
+  Boots = 'boots',
+  Ballerinas = 'ballerinas',
+  Pumps = 'pumps',
+  Mules = 'mules',
+  Sneakers = 'sneakers',
+  FlipFlops = 'flip flops',
+  Hearts = 'hearts',
+  Buckle = 'buckle',
+  Elastic = 'elastic',
+  MetalCharm = 'metal charm',
+  PeepToe = 'peep toe',
+  Ribbons = 'ribbons', //fabric ribbons
+  Bows = 'bows', //plastic bows
+  FabricStraps = 'fabric straps',
+  Straps = 'straps',
+  Stars = 'stars',
+  Cherries = 'cherries',
+  Pouch = 'pouch',
+  Collab = 'collab',
+  VivienneWestwood = 'Vivienne Westwood',
+  JasonWu = 'Jason Wu',
+  IrmaosCampana = 'Irmãos Campana',
+}
 
 export interface Product {
   id: string;
@@ -49,7 +77,7 @@ export interface Product {
   year: number;
   description: string;
   colors: Colors[];
-  features: string[];
+  features: Features[];
   heelhight?: HeelHeight;
   type: ProductType;
   pictures: string[];
