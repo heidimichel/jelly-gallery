@@ -6,7 +6,7 @@
    @if (isLoading()) {
       <p class="mt-3">Loading results...</p>
    } @else {
-      <div class="d-flex flex-wrap">
+      <div class="results-grid"> 
          @for (result of searchResults(); track result.id) {
             <div class="col">
                <jelly-search-item [product]="result"></jelly-search-item>

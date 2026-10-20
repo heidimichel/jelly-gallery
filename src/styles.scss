@@ -134,6 +134,12 @@ jelly-search {
   margin-left: 1em;
 }
 
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
 .search-item-card {
   color: var(--color-dark);
   div {
@@ -143,7 +149,8 @@ jelly-search {
     background-color: #ffffff;
     height: 300px;
     .product-img {
-      width: 200px;
+      width: 100%; 
+      max-width: 200px;
       aspect-ratio: 1 / 1;
       object-fit: cover;
       object-position: center;
@@ -153,7 +160,7 @@ jelly-search {
   }
   &:hover {
     div {
-      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 20px 20px -20px;
     }
   }
 }
