@@ -6,7 +6,7 @@
       </p>
       <p>
         <label for="colors">Colors:</label>
-        <select name="colors" id="colors">
+        <select name="colors" id="colors" formControlName="colors">
           <option value="">Any color</option>
           @for (color of colorOptions; track $index) {
             <option [value]="color">{{color}}</option>  
@@ -15,8 +15,7 @@
       </p>
       <p>
         <label for="year">Year:</label>
-        <input type="number" id="year" placeholder="Year" formControlName="year" /> 
-        <!--TODO: check what other types of inputs would be good, for example, range?-->
+        <input type="number" id="year" placeholder="Year" formControlName="year" />
       </p>
       <p>
         <label for="productType">Product Type:</label>
@@ -40,6 +39,14 @@
         <select name="brand" id="brand" formControlName="brand">
           @for (brand of brands; track $index) {
             <option [value]="brand">{{brand}}</option>
+          }
+        </select>
+      </p>
+      <p>
+        <label for="features">Features:</label>
+        <select name="features" id="features" formControlName="features">
+          @for (feature of features; track $index) {
+            <option [value]="feature">{{feature}}</option>
           }
         </select>
       </p>

@@ -10,6 +10,7 @@ export interface ProductFilters {
   heelHeight?: string | null;
   colors?: string | null;
   year?: string | number | null;
+  features?: string | null;
 }
 
 @Injectable({ providedIn: 'root' })
@@ -56,6 +57,10 @@ export class ProductService {
     if (filters.colors) {
       // Postgres array check: does the colors array contain this color?
       query = query.contains('colors', [filters.colors]);
+    }
+    if (filters.features) {
+      // Postgres array check: does the features array contain this feature?
+      query = query.contains('features', [filters.features]);
     }
     return from(query).pipe(
       map(response => {
