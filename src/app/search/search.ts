@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { Sidebar } from "../sidebar/sidebar";
 import { ProductFilters, ProductService } from '../product/product.service';
 import { Product } from '../product/product.model';
@@ -10,18 +10,26 @@ import { SearchItem } from "../search-item/search-item";
   templateUrl: './search.html',
   styleUrl: './search.scss',
 })
-export class JellySearchComponent implements OnInit {
+export class JellySearchComponent {
   private productService = inject(ProductService);
-  searchResults: Product[] = [];
+
+  searchResults = signal<Product[]>([]);
   initialText = "Use the left menu to search.";
-  searchSubmitted!: boolean;
-  ngOnInit() {
-    //this.searchSubmitted = false;
-  }
+  searchSubmitted = signal(false);
+  isLoading = signal(false);
+
   onSearch(filters: ProductFilters) {
-    this.searchSubmitted = true;
-    this.productService.searchProducts(filters).subscribe(products => {
-      this.searchResults = products;
+    this.searchSubmitted.set(true);
+    this.isLoading.set(true);
+
+    this.productService.searchProducts(filters).subscribe({
+      next: (products) => {
+        this.searchResults.set(products);
+        this.isLoading.set(false);
+      },
+      error: () => {
+        this.isLoading.set(false);
+      },
     });
   }
 }
