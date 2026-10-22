@@ -20,6 +20,7 @@
       <p>
         <label for="productType">Product Type:</label>
         <select name="productType" id="productType" formControlName="productType">
+          <option value="">Any type</option>
           @for (productType of productTypes; track $index) {
             <option [value]="productType">{{productType}}</option>
           }
@@ -28,6 +29,7 @@
       <p>
         <label for="heelHeight">Heel Height:</label>
         <select name="heelHeight" id="heelHeight" formControlName="heelHeight">
+          <option value="">Any height</option>
           @for (heelHeight of heelHeights; track $index) {
             <option [value]="heelHeight">{{heelHeight}}</option>
           }
@@ -37,6 +39,7 @@
       <p>
         <label for="brand">Brand:</label>
         <select name="brand" id="brand" formControlName="brand">
+          <option value="">Any brand</option>
           @for (brand of brands; track $index) {
             <option [value]="brand">{{brand}}</option>
           }
@@ -45,6 +48,7 @@
       <p>
         <label for="features">Features:</label>
         <select name="features" id="features" formControlName="features">
+          <option value="">Any feature</option>
           @for (feature of features; track $index) {
             <option [value]="feature">{{feature}}</option>
           }
