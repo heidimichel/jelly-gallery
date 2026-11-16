@@ -8,7 +8,7 @@ import { DOCUMENT } from '@angular/common';
   styleUrl: './flavours.scss',
 })
 export class JellyFlavoursComponent implements OnInit {
-  private flavours = ['grape','blueberry','sky','kiwi','ananas','orange','cherry','strawberry','peach'];
+  private flavours = ['grape','blueberry','sky','kiwi','pineapple','orange','cherry','strawberry','peach'];
 
   constructor(private renderer: Renderer2, @Inject(DOCUMENT) private document: Document) {}
 
