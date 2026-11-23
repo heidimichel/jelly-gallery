@@ -150,17 +150,19 @@ jelly-footer div {
 }
 
 #icon-boot, #icon-bag, #icon-flat, #icon-sandal, #icon-pump {
-    max-width: 200px;
+  max-width: 200px;
 }
 #splash-image {
-    max-width: 400px;
+  max-width: 400px;
 }
 .splash-text {
-    fill: #6d6e71;
+  fill: #6d6e71;
 }
 .main-column {
-    //height: calc(100vh - 100px); TODO: see if leaving this empty is the way
+  height: calc(100vh - 90px);
 }
+
+//TODO: create a clone of search-item-card with smaller or adjustable height so the home cards look nicer on mobile.
 
 /* Search page */
 jelly-search {
