@@ -11,6 +11,13 @@
   .logo-darker {
     fill: var(--color-dark);
   }
+
+  a {
+    color: var(--color-dark);
+    &:hover {
+      color: var(--color-main);
+    }
+  }
 }
 
 //TODO: review color schemes. Use mixins instead of these current colors, unless something is not readable / does not look good.
@@ -27,7 +34,7 @@
 }
 
 .sky {
-  --color-main: #8cddfe;
+  --color-main: #8cddfe; //TODO: this color scheme is not ideal. Dark is too different from main, light is invisible
   --color-dark: #466e7f;
   --color-light: #e8f8fe;
 }
@@ -78,53 +85,57 @@ body {
   @include translucent-bg(var(--color-dark), 10%);
 }
 
-.icon-base {
-  opacity: 0.8;
-  fill: var(--color-dark);
-}
-
 .jelly-top-menu {
   border-bottom: 1px solid #ccc;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  padding: 1em;
+  padding: 0.5em;
   text-align: center;
   background-color: #fff;
-
   a {
     color: var(--color-main);
     text-decoration: none;
-
     &:hover {
       color: var(--color-dark);
     }
   }
 }
 
-jelly-search {
-  display: flex;
-  width: 100vw;
+jelly-footer div {
+  @include translucent-bg(var(--color-dark), 20%);
+  width: 100%;
+  padding: 0.5em;
+  text-align: center;
+  border-top: 1px solid var(--color-dark);
 }
 
 .jelly-sidebar {
   background-color: var(--color-light);
   color: var(--color-dark);
-  width: 290px;
-  height: 400px;
+  width: 250px;
+  min-height: 400px;
   padding: 1em;
-
+  border: 1px solid var(--color-dark);
   select,
   input,
-  button {
+  button{
     width: 100%;
     border: 1px solid var(--color-dark);
     padding: 5px;
+    border-radius: 0 !important;
+    height: 2em;
   }
-
+  button {
+    background-color: var(--color-main);
+    color: var(--color-light);
+    &:hover {
+      background-color: var(--color-dark);
+    }
+  }
   @media (min-width: 500px) {
-    height: calc(100vh - 100px); //TODO: make height dynamic based on top menu height, or use flexbox to fill remaining space. Or make same as the jelly-content height.
+    height: 100%;
   }
 }
 
@@ -132,6 +143,29 @@ jelly-search {
   flex-grow: 1;
   height: 100%;
   margin-left: 1em;
+}
+/* Home page */
+.icon-base {
+  fill: var(--color-dark);
+}
+
+#icon-boot, #icon-bag, #icon-flat, #icon-sandal, #icon-pump {
+    max-width: 200px;
+}
+#splash-image {
+    max-width: 400px;
+}
+.splash-text {
+    fill: #6d6e71;
+}
+.main-column {
+    //height: calc(100vh - 100px); TODO: see if leaving this empty is the way
+}
+
+/* Search page */
+jelly-search {
+  display: flex;
+  width: 100vw;
 }
 
 .results-grid {
@@ -156,6 +190,9 @@ jelly-search {
       object-position: center;
       display: block;
       padding-bottom: 0.5em;
+    }
+    p {
+      margin-top: 1em;
     }
   }
   &:hover {
